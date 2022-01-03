@@ -38,7 +38,7 @@ class Renderer:
         self.znear = 0.05
         self.zfar = 100.0
 
-    def visualize_mesh(self, vertices, camera_translation, images):
+    def visualize_mesh(self, vertices, camera_translation, images): #If you want to use camera rotation matrix, pass it to call function (Be careful with shape)
         device = torch.device("cuda:0")
         vertices = vertices.to(device)
         camera_translation = camera_translation.to(device)
