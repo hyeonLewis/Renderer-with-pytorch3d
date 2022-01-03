@@ -23,3 +23,16 @@ git clone https://github.com/hyeonLewis/Renderer-with-pytorch3d
 conda install ***.tar.bz2 #Pytorch3d tar file you download
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge #Check version with pytorch3d 
 ```
+
+## Convert renderer
+You can use all parameters related to camera, vertices and faces (Focal length, rotation matrix ... etc)
+
+```
+from utils import renderer-with-pytorch3d
+
+# Create renderer
+self.renderer = Renderer(focal_length=self.focal_length, img_res=self.options.img_res, faces=self.smpl.faces) #Not limited to human mesh (smpl parameters)
+
+# Render images
+rendering_img = self.renderer.visualize_mesh(vertices, cam_translation, images) #You can add cam_rotation if you need.
+```
